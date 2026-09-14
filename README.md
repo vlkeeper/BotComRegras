@@ -1,18 +1,41 @@
-## Getting Started
+# Chatbot - Biblioteca Pará Livros
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Descrição
 
-## Folder Structure
+Este é um assistente virtual baseado em texto desenvolvido em Java para a biblioteca **Pará Livros**. O chatbot interage com o usuário por meio do terminal, reconhecendo palavras-chave para fornecer informações sobre o acervo, horários de funcionamento, localização, multas e políticas de doação. Ele também demonstra o uso de variáveis de estado (contexto da conversa) para simular o processo de reserva de livros.
 
-The workspace contains two folders by default, where:
+## Funcionalidades
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+* **Múltiplas regras de negócio:** Respostas mapeadas com base na identificação de palavras-chave.
+* **Normalização de entrada:** Tratamento de strings (conversão para letras minúsculas e remoção de espaços) para facilitar o reconhecimento dos comandos.
+* **Regras compostas:** Combinação de múltiplas condições lógicas (ex: perguntas específicas sobre formatos como quadrinhos ou mangás).
+* **Controle de Estado/Contexto:** Retenção de contexto para a ação de reserva, alterando o fluxo do loop para aguardar o nome do livro na próxima mensagem do usuário.
+* **Resposta de Fallback:** Tratamento padrão para mensagens ou comandos não compreendidos pelo assistente.
+* **Suporte a UTF-8:** Configuração forçada de entrada e saída em UTF-8 para garantir a exibição correta da acentuação no terminal.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Como Executar
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### Pré-requisitos
 
-## Dependency Management
+* Java Development Kit (JDK) instalado no seu sistema.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### Passos para execução
+
+1. Salve o código fonte do chatbot em um arquivo com o nome exato de `App.java`.
+2. Abra o terminal (Prompt de Comando, PowerShell ou terminal do seu sistema operacional) e navegue até o diretório onde o arquivo `App.java` foi salvo.
+3. Compile o código informando o encoding UTF-8 com o seguinte comando:
+```bash
+javac -encoding UTF-8 App.java
+
+```
+
+
+4. Após a compilação, um arquivo `App.class` será gerado na mesma pasta. Execute o programa forçando o formato UTF-8 na máquina virtual Java:
+```bash
+java -Dfile.encoding=UTF-8 App
+
+```
+
+
+5. O console iniciará o chat. Digite suas mensagens para interagir com o assistente.
+6. Para encerrar o programa, digite `sair`, `tchau` ou `encerrar`.
